@@ -14,7 +14,6 @@ class ArticleScreen extends StatefulWidget {
 }
 
 class _ArticleScreenState extends State<ArticleScreen> {
-
   var users = List<ArticleModel>.empty();
   _getArticles() {
     API.getArticles().then((response) {
@@ -50,8 +49,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
 
   Widget _listItem(int index) {
     return Container(
-
-      margin: EdgeInsets.only(top: 10 , left: 5 , right: 5),
+      margin: EdgeInsets.only(top: 10, left: 5, right: 5),
       height: 200,
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
@@ -105,25 +103,25 @@ class _ArticleScreenState extends State<ArticleScreen> {
                       height: 20,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width / 1.8,
+                      width: MediaQuery.of(context).size.width / 2.1,
                       padding: const EdgeInsets.only(left: 10),
                       child: Text(
                         users[index].title.toString(),
                         style: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 150),
-                      child: OutlinedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const BlogScreen()));
-                          },
-                          child: const Text("Read More")),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 150),
+                    //   child: OutlinedButton(
+                    //       onPressed: () {
+                    //         Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //                 builder: (context) => const BlogScreen()));
+                    //       },
+                    //       child: const Text("Read More")),
+                    // ),
                   ],
                 ),
               ),
